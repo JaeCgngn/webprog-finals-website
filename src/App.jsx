@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react";
+import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 import "./App.css";
 import cartIcon from "./assets/cart.svg";
+import Login from "./login.jsx";
 
 const mockProducts = [
   { id: 1, name: "Item #1", price: "PHP", desc: "text here",  image: "https://placehold.co/300x200?text=IMG" },
@@ -32,7 +34,7 @@ const ProductCard = ({ product }) => {
   );
 };
 
-const App = () => {
+const Home = () => {
   const [searchTerm, setSearchTerm] = useState("");
 
   const filtered = mockProducts.filter((p) =>
@@ -42,22 +44,35 @@ const App = () => {
   return (
     <div className="app">
       <header className="header">
-        <h1 className="title">STORE</h1>
-
-        <div className="search-box">
-          <SearchIcon className="search-icon" />
-          <input
-            type="text"
-            placeholder="Search items..."
-            value={searchTerm}
-            onChange={(e) => setSearchTerm(e.target.value)}
-          />
+        <div className="header-left">
+          <h1 className="title">STORE</h1>
+        
+          <div className="search-box">
+            <SearchIcon className="search-icon" />
+            <input
+              type="text"
+              placeholder="Search items..."
+              value={searchTerm}
+              onChange={(e) => setSearchTerm(e.target.value)}
+            />
+          </div>
         </div>
-        <button className="cart-btn">
-          <img src={cartIcon} alt="Cart" className="cart-icon" />
-          Cart
-          <span className="cart-icon"></span>
-        </button>
+
+        <div className="header-right">
+          <button className="cart-btn">
+            <img src={cartIcon} alt="Cart" className="cart-icon" />
+            Cart
+          </button>
+
+          <button className="login-btn">
+            <img
+              src="https://www.svgrepo.com/show/436843/person-fill.svg"
+              alt="Login"
+              className="login-icon"
+            />
+            Login
+          </button>
+        </div>
       </header>
 
       {/* Item Cards in grid */}
@@ -77,6 +92,17 @@ const App = () => {
         UnPAUSE
       </footer>
     </div>
+  );
+};
+
+const App = () => {
+  return (
+    <Router>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/login" element={<Login />} />
+      </Routes>
+    </Router>
   );
 };
 

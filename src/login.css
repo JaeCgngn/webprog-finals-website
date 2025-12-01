@@ -1,0 +1,112 @@
+/* login.css */
+
+:root {
+    --bg-primary: #111822;
+    --bg-secondary: #000000;
+    --neon-cyan: #00ffc8;
+    --neon-purple: #8115df;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body, html {
+    width: 100vw;
+    height: 100vh;
+    font-family: "Inter", sans-serif;
+    background: var(--bg-primary);
+    color: white;
+}
+
+#root {
+  height: 100%;
+  width: 100%;
+}
+
+.login-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%; 
+    width: 100%;
+    padding: 20px;
+}
+
+.login-form {
+    background: var(--bg-secondary);
+    border: 2px solid var(--neon-cyan);
+    border-radius: 16px;
+    padding: 40px;
+    width: 320px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    box-shadow: 0 0 20px rgba(0, 255, 200, 0.3);
+    transition: border 0.3s, box-shadow 0.3s;
+}
+
+.login-form:hover {
+    border: 2px solid var(--neon-purple);
+    box-shadow: 0 0 30px rgba(129, 21, 223, 0.6);
+}
+
+.login-form h2 {
+    text-align: center;
+    color: var(--neon-cyan);
+    margin: 0;
+}
+
+.login-form input {
+    padding: 12px;
+    border-radius: 12px;
+    border: 1px solid var(--neon-cyan);
+    background: var(--bg-primary);
+    color: white;
+    font-size: 16px;
+    transition: border 0.3s;
+}
+
+.login-form input:focus {
+    outline: none;
+    border: 1px solid var(--neon-purple);
+}
+
+.login-form input::placeholder {
+    color: #bbb;
+}
+
+.login-form button {
+    padding: 12px;
+    border-radius: 12px;
+    border: none;
+    background: var(--neon-cyan);
+    color: black;
+    font-weight: bold;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.login-form button:hover {
+    background: var(--neon-purple);
+    color: white;
+}
+
+.back-link {
+    text-align: center;
+    margin-top: 10px;
+}
+
+.back-link a {
+    color: var(--neon-cyan);
+    text-decoration: none;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.back-link a:hover {
+    color: var(--neon-purple);
+}
