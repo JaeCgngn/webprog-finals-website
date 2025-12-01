@@ -54,6 +54,7 @@ const App = () => {
         </div>
       </header>
 
+      {/* Item Cards in grid */}
       <main className="content">
         <div className="grid">
           {filtered.map((product) => (
