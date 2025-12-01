@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import "./App.css";
+import cartIcon from "./assets/cart.svg";
 
 const mockProducts = [
   { id: 1, name: "Item #1", price: "PHP", desc: "text here",  image: "https://placehold.co/300x200?text=IMG" },
@@ -52,6 +53,11 @@ const App = () => {
             onChange={(e) => setSearchTerm(e.target.value)}
           />
         </div>
+        <button className="cart-btn">
+          <img src={cartIcon} alt="Cart" className="cart-icon" />
+          Cart
+          <span className="cart-icon"></span>
+        </button>
       </header>
 
       {/* Item Cards in grid */}
