@@ -1,0 +1,121 @@
+.cart-container {
+    min-height: 100vh;
+    padding: 40px;
+    background: #111822;
+    color: white;
+    font-family: "Inter", sans-serif;
+}
+
+.cart-container h2 {
+    text-align: center;
+    color: #00ffc8;
+    margin-bottom: 30px;
+}
+
+.cart-content {
+    display: flex;
+    gap: 40px;
+    justify-content: space-between;
+}
+
+.cart-items {
+    flex: 2;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.cart-item {
+    display: flex;
+    gap: 20px;
+    background: #000000;
+    border: 2px solid #00ffc8;
+    border-radius: 12px;
+    padding: 15px;
+    transition: 0.3s;
+}
+
+.cart-item:hover {
+    border-color: #8115df;
+    box-shadow: 0 0 15px rgba(129, 21, 223, 0.6);
+}
+
+.cart-item-img {
+    width: 150px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.cart-item-info h3 {
+    margin: 0 0 5px 0;
+}
+
+.order-summary {
+    flex: 1;
+    background: #000000;
+    border: 2px solid #00ffc8;
+    border-radius: 12px;
+    padding: 20px;
+    height: fit-content;
+}
+
+.order-summary h3 {
+    color: #00ffc8;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.summary-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    font-size: 16px;
+}
+
+.summary-row.total {
+    font-weight: bold;
+    font-size: 18px;
+    border-top: 1px solid #00ffc8;
+    padding-top: 10px;
+    margin-top: 10px;
+}
+
+.checkout-btn {
+    width: 100%;
+    margin-top: 20px;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 12px;
+    background: #00ffc8;
+    color: black;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.checkout-btn:hover {
+    background: #8115df;
+    color: white;
+}
+
+.empty-cart {
+    text-align: center;
+    color: #bbb;
+    font-size: 18px;
+}
+
+.back-link {
+    text-align: center;
+    margin-top: 30px;
+}
+
+.back-link a {
+    color: #00ffc8;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.back-link a:hover {
+    color: #8115df;
+}

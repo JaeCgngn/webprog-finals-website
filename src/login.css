@@ -97,7 +97,6 @@ body, html {
 
 .back-link {
     text-align: center;
-    margin-top: 10px;
 }
 
 .back-link a {
@@ -109,4 +108,89 @@ body, html {
 
 .back-link a:hover {
     color: var(--neon-purple);
+}
+
+.signup-btn {
+
+    background: #111822;
+    border: 1px solid var(--neon-purple);
+    cursor: pointer;
+    transition: 0.3s;
+    padding: 5px;
+    border-radius: 5px;
+    text-align: center;
+    margin-top: 30px;
+}
+
+.signup-btn a {
+    color: white;
+    font-weight: bold;
+    font-size: 11x;
+}
+
+.signup-btn:hover {
+    background: var(--neon-purple);
+}
+
+.signup-btn:hover a {
+    color: white;
+}
+
+/* signup additional styles */
+
+.signup-container {
+    height: 100vh;
+    width: 100vw;
+    background: #0d1117;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.signup-card {
+    width: 350px;
+    background: #111827;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 0 20px rgba(0, 255, 200, 0.15);
+    text-align: center;
+}
+
+.signup-title{
+color: white;
+  margin-bottom: 20px;
+}
+
+.signup-input {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 12px;
+  border-radius: 8px;
+  border: 1px solid #00ffc8;
+  background: transparent;
+  color: white;
+}
+
+.signup-button {
+  width: 100%;
+  padding: 12px;
+  background: #00ffc8;
+  border: none;
+  border-radius: 8px;
+  color: #000;
+  font-weight: bold;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.signup-small {
+  margin-top: 12px;
+  color: #bbb;
+  font-size: 14px;
+}
+
+.signup-link {
+  color: #00ffc8;
+  cursor: pointer;
+  text-decoration: underline;
 }

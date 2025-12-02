@@ -1,8 +1,11 @@
 import React, { useState, useEffect } from "react";
-import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route, Link, useNavigate } from "react-router-dom";
 import "./App.css";
 import cartIcon from "./assets/cart.svg";
 import Login from "./login.jsx";
+import Signup from "./signup.jsx";
+import Cart from "./cart.jsx";
+import Checkout from "./checkout.jsx";
 
 const mockProducts = [
   { id: 1, name: "Item #1", price: "PHP", desc: "text here",  image: "https://placehold.co/300x200?text=IMG" },
@@ -36,6 +39,7 @@ const ProductCard = ({ product }) => {
 
 const Home = () => {
   const [searchTerm, setSearchTerm] = useState("");
+  const navigate = useNavigate();
 
   const filtered = mockProducts.filter((p) =>
     p.name.toLowerCase().includes(searchTerm.toLowerCase())
@@ -59,12 +63,12 @@ const Home = () => {
         </div>
 
         <div className="header-right">
-          <button className="cart-btn">
+          <button className="cart-btn" onClick={() => navigate("/cart")}>
             <img src={cartIcon} alt="Cart" className="cart-icon" />
             Cart
           </button>
 
-          <button className="login-btn">
+          <button className="login-btn" onClick={() => navigate("/login")}>
             <img
               src="https://www.svgrepo.com/show/436843/person-fill.svg"
               alt="Login"
@@ -101,6 +105,9 @@ const App = () => {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/login" element={<Login />} />
+        <Route path="/signup" element={<Signup />} />
+        <Route path="/cart" element={<Cart />} />
+        <Route path="/checkout" element={<Checkout />} />
       </Routes>
     </Router>
   );

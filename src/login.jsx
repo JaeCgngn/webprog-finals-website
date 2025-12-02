@@ -1,6 +1,7 @@
 import React, { useState } from "react";
-import { useNavigate, Link } from "react-router-dom";
+useNavigate
 import "./login.css";
+import Signup from "./signup.jsx";
 
 const Login = () => {
   const [email, setEmail] = useState("");
@@ -35,12 +36,22 @@ const Login = () => {
 
         <button type="submit">Sign In</button>
 
+        <div className="signup-link">
+          <Link to="/signup"> Don't have an account? Sign Up</Link>
+        </div>
+
         <div className="back-link">
           <Link to="/">Back to Store</Link>
         </div>
+        
+        
+
       </form>
+      
     </div>
   );
 };
+
+
 
 export default Login;
