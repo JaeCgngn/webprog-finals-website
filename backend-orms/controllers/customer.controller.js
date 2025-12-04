@@ -100,6 +100,7 @@ export const createCustomer = async (req, res, next) => {
       password: hashedPassword,
       first_name,
       last_name,
+      products: []
     });
 
     // Remove password from response
@@ -187,10 +188,32 @@ export const deleteCustomer = async (req, res, next) => {
   }
 };
 
+export const addProduct = async (req, res, next) => {
+  try {
+    const { customerId, productId } = req.body;
+
+    if (!customerId || !productId) {
+      return res.status(400).json({ error: "customerId and productId are required" });
+    }
+
+    // Add the product to the customer's products array
+    const result = await Customer.addProduct(customerId, productId);
+
+    if (result.modifiedCount === 0) {
+      return res.status(404).json({ error: "Customer not found or product already added" });
+    }
+
+    return res.json({ message: "Product added to customer successfully" });
+  } catch (error) {
+    next(error);
+  }
+};
+
 export default {
   getAllCustomers,
   getCustomerById,
   createCustomer,
   updateCustomer,
   deleteCustomer,
+  addProduct,
 };

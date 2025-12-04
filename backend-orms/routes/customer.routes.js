@@ -5,6 +5,7 @@ import {
   createCustomer,
   updateCustomer,
   deleteCustomer,
+  addProduct,
 } from "../controllers/customer.controller.js";
 import { authenticateToken } from "../middleware/auth.js";
 import { validate, sanitizeInput } from "../middleware/validation.js";
@@ -61,5 +62,7 @@ router.put(
  * @access  Private
  */
 router.delete("/:id", authenticateToken, deleteCustomer);
+
+router.post("/add-product", authenticateToken, addProduct);
 
 export default router;

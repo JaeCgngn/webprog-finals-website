@@ -135,6 +135,22 @@ class Customer {
     const count = await this.getCollection().countDocuments({ email });
     return count > 0;
   }
+
+  async addProductToCustomer(customerId, productId) {
+  const collection = this.getCollection();
+  return collection.updateOne(
+    { _id: new mongodb.ObjectId(customerId) },
+    { $addToSet: { products: new mongodb.ObjectId(productId) } }
+  );
+  }
+
+  async addProduct(customerId, productId) {
+    const collection = this.getCollection();
+    return collection.updateOne(
+      { _id: new mongodb.ObjectId(customerId) },
+      { $addToSet: { products: new mongodb.ObjectId(productId) } } // prevents duplicates
+    );
+  }
 }
 
 export default new Customer();
