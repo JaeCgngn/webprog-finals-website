@@ -37,7 +37,6 @@ router.get("/:id", getCustomerById);
  */
 router.post(
   "/",
-  authenticateToken,
   sanitizeInput,
   validate(validateRegistration),
   createCustomer
@@ -63,6 +62,6 @@ router.put(
  */
 router.delete("/:id", authenticateToken, deleteCustomer);
 
-router.post("/add-product", authenticateToken, addProduct);
+router.post("/add-product", addProduct);
 
 export default router;
